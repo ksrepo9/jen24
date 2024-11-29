@@ -16,6 +16,11 @@ pipeline {
                 git credentialsId: 'ks', url: 'https://github.com/ksrepo9/app.git'
             }
 			}
+		stage('mvn version') {
+            steps {
+              sh 'mvn --version'    
+            }
+			}	
 		stage('mvn clean') {
             steps {
                 sh 'mvn clean'      
